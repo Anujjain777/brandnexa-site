@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>BrandNexa | Influencer Marketing Network</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -10,18 +11,18 @@
 <style>
 
 :root{
---bg:#0a0a0a;
---card:#111;
---accent:#1e6bff;
+--bg:#070b14;
+--card:#0f1624;
+--accent:#2b7cff;
 --text:#ffffff;
---muted:#b3b3b3;
+--muted:#9aa4b2;
 }
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:Segoe UI, sans-serif;
 }
 
 body{
@@ -40,17 +41,17 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 8%;
-background:rgba(10,10,10,0.6);
--webkit-backdrop-filter: blur(12px);
-backdrop-filter: blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.1);
+padding:16px 8%;
+background:rgba(8,12,20,0.7);
+-webkit-backdrop-filter:blur(12px);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:1000;
 }
 
 .logo{
 font-size:22px;
-font-weight:bold;
-letter-spacing:1px;
+font-weight:700;
 }
 
 .logo span{
@@ -59,14 +60,14 @@ color:var(--accent);
 
 .nav-links{
 display:flex;
-gap:25px;
+gap:28px;
 }
 
 .nav-links a{
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-size:15px;
-transition:.3s;
+transition:0.3s;
 }
 
 .nav-links a:hover{
@@ -82,17 +83,18 @@ cursor:pointer;
 /* HERO */
 
 .hero{
-height:90vh;
+height:92vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:0 20px;
+background:radial-gradient(circle at top,#16203a 0%,#070b14 70%);
 }
 
 .hero h1{
-font-size:52px;
+font-size:54px;
 max-width:800px;
 margin-bottom:20px;
 }
@@ -110,46 +112,50 @@ margin-bottom:30px;
 .cta{
 display:flex;
 gap:20px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .btn{
 padding:12px 26px;
 border-radius:30px;
-border:none;
-cursor:pointer;
 font-weight:600;
+cursor:pointer;
+border:none;
 transition:.3s;
 }
 
 .btn-primary{
 background:var(--accent);
 color:white;
+box-shadow:0 0 18px rgba(43,124,255,.5);
 }
 
 .btn-secondary{
 background:transparent;
-border:1px solid white;
+border:1px solid var(--accent);
 color:white;
 }
 
 .btn:hover{
-transform:scale(1.07);
+transform:scale(1.08);
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
-padding:90px 8%;
+padding:100px 8%;
 }
 
 .section-title{
 font-size:34px;
-margin-bottom:15px;
+margin-bottom:12px;
 }
 
 .section-desc{
 color:var(--muted);
 margin-bottom:40px;
+max-width:650px;
 }
 
 /* ABOUT */
@@ -162,31 +168,32 @@ gap:30px;
 
 .card{
 background:var(--card);
-padding:25px;
+padding:26px;
 border-radius:12px;
 transition:.3s;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 /* VIDEO PORTFOLIO */
 
 .video-feed{
-display:flex;
-gap:20px;
 overflow:hidden;
+position:relative;
 }
 
 .video-track{
 display:flex;
 gap:20px;
-animation:scroll 25s linear infinite;
+animation:scroll 30s linear infinite;
 }
 
 .video-card video{
-width:280px;
+width:300px;
 border-radius:10px;
 }
 
@@ -195,23 +202,25 @@ border-radius:10px;
 100%{transform:translateX(-50%)}
 }
 
-/* CREATOR DASHBOARD */
+/* DASHBOARD */
 
 .dashboard{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:24px;
 }
 
 .creator{
 background:var(--card);
-padding:20px;
-border-radius:10px;
+padding:22px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
 transition:.3s;
 }
 
 .creator:hover{
-transform:scale(1.05);
+transform:translateY(-6px);
+box-shadow:0 12px 35px rgba(0,0,0,.5);
 }
 
 .stats{
@@ -225,38 +234,44 @@ color:var(--muted);
 /* CONTACT */
 
 form{
-max-width:500px;
+max-width:520px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:15px;
+gap:16px;
+background:var(--card);
+padding:30px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
 }
 
-input, textarea{
+input,textarea{
 padding:12px;
-border:none;
 border-radius:6px;
-background:#1a1a1a;
+border:none;
+background:#0b0f18;
 color:white;
+font-size:14px;
 }
 
 textarea{
 height:120px;
+resize:none;
 }
 
-button{
-cursor:pointer;
+input:focus,textarea:focus{
+outline:1px solid var(--accent);
 }
 
 /* FOOTER */
 
 footer{
 padding:30px 8%;
-border-top:1px solid rgba(255,255,255,0.1);
+border-top:1px solid rgba(255,255,255,0.08);
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:15px;
+gap:16px;
 }
 
 .socials{
@@ -279,14 +294,19 @@ transform:scale(1.2);
 
 @media(max-width:768px){
 
+.hero h1{
+font-size:38px;
+}
+
 .nav-links{
 position:absolute;
 top:70px;
 right:-100%;
 flex-direction:column;
-background:#111;
+background:#0f1624;
 width:200px;
 padding:20px;
+border-radius:10px;
 transition:.4s;
 }
 
@@ -296,10 +316,6 @@ right:20px;
 
 .hamburger{
 display:block;
-}
-
-.hero h1{
-font-size:36px;
 }
 
 }
@@ -333,15 +349,15 @@ font-size:36px;
 
 <section class="hero">
 
-<h1>Connecting <span>Brands</span> With The Right <span>Creators</span></h1>
+<h1>Scale Your <span>Influencer Marketing</span> With The Right Creators</h1>
 
 <p>
-BrandNexa is a creator-brand partnership network that helps brands collaborate with creators who genuinely match their audience and niche.
+BrandNexa connects brands with creators who truly match their niche, audience and voice — creating authentic campaigns that convert.
 </p>
 
 <div class="cta">
 <button class="btn btn-primary">Start Campaign</button>
-<button class="btn btn-secondary">Join as Creator</button>
+<button class="btn btn-secondary">Join As Creator</button>
 </div>
 
 </section>
@@ -350,27 +366,27 @@ BrandNexa is a creator-brand partnership network that helps brands collaborate w
 
 <section id="about">
 
-<h2 class="section-title">About BrandNexa</h2>
+<h2 class="section-title">Why Brands Choose BrandNexa</h2>
 
 <p class="section-desc">
-We help brands discover creators that naturally fit their positioning and audience. Our goal is to create authentic collaborations instead of random promotions.
+We provide the infrastructure and analytics needed to turn creator collaborations into scalable marketing channels.
 </p>
 
 <div class="about-grid">
 
 <div class="card">
-<h3>Creator Matching</h3>
-<p>We match brands with creators who align with their niche and audience.</p>
+<h3>Precision Matching</h3>
+<p>Our system connects brands with creators who perfectly match their niche and target audience.</p>
 </div>
 
 <div class="card">
 <h3>Authentic Campaigns</h3>
-<p>Campaigns that feel organic and engaging instead of forced advertisements.</p>
+<p>Focus on genuine recommendations rather than forced ads.</p>
 </div>
 
 <div class="card">
 <h3>Performance Insights</h3>
-<p>Brands can analyze engagement rates and creator analytics before collaboration.</p>
+<p>Brands can review creator engagement, reach and demographics before partnerships.</p>
 </div>
 
 </div>
@@ -383,26 +399,34 @@ We help brands discover creators that naturally fit their positioning and audien
 
 <h2 class="section-title">Campaign Portfolio</h2>
 
-<p class="section-desc">Sample creator campaign content.</p>
+<p class="section-desc">Example creator collaborations and brand campaigns.</p>
 
 <div class="video-feed">
 
 <div class="video-track">
 
 <div class="video-card">
-<video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
+<video autoplay muted loop>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4">
+</video>
 </div>
 
 <div class="video-card">
-<video src="https://www.w3schools.com/html/movie.mp4" autoplay muted loop></video>
+<video autoplay muted loop>
+<source src="https://www.w3schools.com/html/movie.mp4">
+</video>
 </div>
 
 <div class="video-card">
-<video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
+<video autoplay muted loop>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4">
+</video>
 </div>
 
 <div class="video-card">
-<video src="https://www.w3schools.com/html/movie.mp4" autoplay muted loop></video>
+<video autoplay muted loop>
+<source src="https://www.w3schools.com/html/movie.mp4">
+</video>
 </div>
 
 </div>
@@ -417,7 +441,9 @@ We help brands discover creators that naturally fit their positioning and audien
 
 <h2 class="section-title">Creator Performance</h2>
 
-<p class="section-desc">Brands can view creator performance before collaborations.</p>
+<p class="section-desc">
+Brands can analyze creator metrics before collaboration.
+</p>
 
 <div class="dashboard">
 
@@ -450,15 +476,17 @@ We help brands discover creators that naturally fit their positioning and audien
 
 <section id="contact">
 
-<h2 class="section-title">Contact Us</h2>
+<h2 class="section-title">Start A Campaign</h2>
 
-<p class="section-desc">Start your brand collaboration with BrandNexa.</p>
+<p class="section-desc">
+Tell us about your brand and we will match you with the right creators.
+</p>
 
 <form>
 
 <input type="text" placeholder="Your Name" required>
 
-<input type="email" placeholder="Your Email" required>
+<input type="email" placeholder="Work Email" required>
 
 <textarea placeholder="Tell us about your campaign"></textarea>
 
@@ -477,11 +505,8 @@ We help brands discover creators that naturally fit their positioning and audien
 <div class="socials">
 
 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-
 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-
 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-
 <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
 
 </div>
@@ -490,10 +515,10 @@ We help brands discover creators that naturally fit their positioning and audien
 
 <script>
 
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+const hamburger=document.getElementById("hamburger");
+const navLinks=document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
+hamburger.addEventListener("click",()=>{
 navLinks.classList.toggle("active");
 });
 
